@@ -1,0 +1,17 @@
+F:.
+├─docs
+│  ├─.vitepress
+│  │  ├─cache
+│  │  │  └─deps
+│  │  ├─dist
+│  │  │  ├─assets
+│  │  │  │  └─chunks
+│  │  │  ├─changelog
+│  │  │  └─course
+│  │  └─theme
+│  │      └─styles
+│  ├─changelog
+│  ├─course
+│  └─public
+│      ├─icon
+│      └─svg
