@@ -2824,6 +2824,11 @@ markdown-it-github-alert@^1.0.6:
   dependencies:
     markdown-it "^13.0.2"
 
+markdown-it-github-alerts@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markdown-it-github-alerts/-/markdown-it-github-alerts-0.1.2.tgz#b2f858756535b78bdce9128ffe0114b1875d469f"
+  integrity sha512-jtCrfFxXR6c/bNRBvWkoqUquEDdIF9q7/gNZjP47W96kaIiBMiYHbpf468IPeZJB5BVRls6+IXGchhQSTxy0DQ==
+
 markdown-it@^13.0.2:
   version "13.0.2"
   resolved "https://registry.npmmirror.com/markdown-it/-/markdown-it-13.0.2.tgz#1bc22e23379a6952e5d56217fbed881e0c94d536"

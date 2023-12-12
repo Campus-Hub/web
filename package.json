@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "markdown-it-github-alert": "^1.0.6",
+    "markdown-it-github-alerts": "^0.1.2",
     "vitepress-markdown-timeline": "^1.2.1"
   },
   "version": "0.0.0"

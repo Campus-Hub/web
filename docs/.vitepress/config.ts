@@ -11,11 +11,7 @@ export default defineConfig({
     // srcDir: '/post/',
     assetsDir: './static',
     description: 'This is a website for education resources sharing and management, build by vite-press.',
-
-    // vite: {
-    //     // 配置 Vite 插件，处理 SVG 文件
-    //     plugins: [svgLoader()],
-    // },
+    head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
 
     lastUpdated: true,
     cleanUrls: true,
@@ -25,6 +21,10 @@ export default defineConfig({
         // logo: "",
         // set navigation in navbar.
         nav: nav(),
+        sidebar: {
+            '/course/LinearAlgebra_ZJU/': { base: '/course/LinearAlgebra_ZJU/', items: sidebarLinearAlgebraZJU() },
+            '/course/LinearAlgebra_MIT/': { base: '/course/LinearAlgebra_MIT/', items: sidebarLinearAlgebraMIT() },
+        },
         // Search Config in Vitepress
         // https://vitepress.dev/reference/default-theme-search
         search: {
@@ -67,7 +67,7 @@ export default defineConfig({
             }
         },
         socialLinks: [
-          { icon: "github", link: "https://github.com/Anxiu0101/campus-hub-vitepress" },
+          { icon: "github", link: "https://github.com/Campus-Hub/web" },
           {
               icon: {
                   svg: `<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"24\" viewBox=\"0 -960 960 960\" width=\"24\"><path d=\"M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z\"/></svg>`
@@ -75,16 +75,16 @@ export default defineConfig({
               link: "mailto://anxiu.fyc@foxmail.com"
           }
         ],
+        // docFooter: { prev: '上一篇', next: '下一篇' },
         footer: {
-            message: 'Content resources follow <a herf="https://github.com/">CC BY-NC-SA 4.0</a>, and code resources adhere to the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.\n',
-            // message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
-            copyright: 'Copyright © 2023 <a href="https://github.com/Anxiu0101">Anxiu0101</a>'
+            message: 'Released under the <a herf="https://github.com/">CC BY-NC-SA 4.0</a> / <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.\n',
+            copyright: 'Copyright © 2023 <a href="https://github.com/Anxiu0101">CampusHub Online Contributors.</a>'
         },
     },
 
     markdown: {
         // options for markdown-it-anchor
-        anchor: { permalink: false },
+        // anchor: { permalink: false },
 
         // options for markdown-it-toc
         toc: { level: [1, 2] },
@@ -130,9 +130,50 @@ function nav(): DefaultTheme.NavItem[] {
                 {
                     text: 'Changelog',
                     link: '/about/changelog',
+                },
+                {
+                    text: 'FAQ',
+                    link: '/about/faq',
                 }
             ],
         },
 
+    ]
+}
+
+function sidebarLinearAlgebraZJU(): DefaultTheme.SidebarItem[] {
+    return [
+        {
+            text: 'Linear Algebra',
+            collapsed: false,
+            items: [
+                { text: 'Chapter 1', link: 'Ch1' },
+                { text: 'Chapter 2', link: 'Ch2' },
+                { text: 'Chapter 3', link: 'Ch3' },
+            ]
+        },
+        // { text: 'Config & API Reference', base: '/reference/', link: 'site-config' }
+    ]
+}
+
+function sidebarLinearAlgebraMIT(): DefaultTheme.SidebarItem[] {
+    return [
+        {
+            text: 'Syllabus',
+            collapsed: false,
+            items: [
+                // { text: 'Introduction', link: 'index' },
+                { text: 'Instructor Insights', link: 'InstructorInsights' },
+            ],
+        },
+        {
+            text: 'Unit I',
+            collapsed: false,
+            items: [
+                { text: 'Unit I', link: 'unit1/index' },
+                { text: 'Session I-1', link: 'unit1/session1-1' },
+            ],
+        },
+        // { text: 'Config & API Reference', base: '/reference/', link: 'site-config' }
     ]
 }
