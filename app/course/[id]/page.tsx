@@ -33,7 +33,7 @@ export default function CourseDetailPage({ params }: { params: { id: number } })
     return (
         <>
             <CampusHeader/>
-            <CourseDetailSheet/>
+            {/*<CourseDetailSheet/>*/}
             <main className="container mx-auto my-8 px-4 md:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     <div className="col-span-2">

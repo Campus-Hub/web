@@ -69,7 +69,7 @@ export default function CourseCommunityPage() {
     return (
         <>
             <CampusHeader/>
-            <CourseDetailSheet/>
+            {/*<CourseDetailSheet/>*/}
             <main className="container mx-auto my-8 px-4 md:px-6 lg:px-8">
                 <div className="space-y-8">
                     <div>
