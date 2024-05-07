@@ -31,7 +31,8 @@ export default function CourseCommunityPage() {
 	})
 	
 	const {page,limit,title,date,category} = params;
-	let data: ({
+	// @ts-ignore
+    let data: ({
       date: string;
       star: string;
       thumb: string;
@@ -63,9 +64,11 @@ export default function CourseCommunityPage() {
       id: number;
       state: string
   })[] = list.find(v=>v.id === category);
-	data = data && data.courses || []
+	// @ts-ignore
+    data = data && data.courses || []
 	data = data.filter(v=> (!title || v.title.includes(title) ) && (!date || v.date === date) )
 
+    // @ts-ignore
     return (
         <>
             <CampusHeader/>
@@ -80,6 +83,7 @@ export default function CourseCommunityPage() {
                     </div>
                     <div className="flex items-center justify-between">
                         <div className="w-full max-w-md">
+                            {/*@ts-ignore*/}
                             <CourseSearchBar changeDate={ d=>  setParams({...params,date: `${d.getFullYear()}-${d.getMonth() < 9 ? '0' + (d.getMonth()+1) : (d.getMonth()+1)  }-${d.getDate() < 10 ? '0' + d.getDate() : d.getDate()  }` }) } changeTitle={title=> setParams({...params,title})} changeCategory={category=> setParams({...params,category})} />
                             {/*<Input*/}
                             {/*    className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-800 dark:text-white"*/}

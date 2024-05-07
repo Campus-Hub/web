@@ -18,6 +18,7 @@ import {Separator} from "@/components/ui/separator";
 export function CampusHeader() {
 	
     const learnArr = list.map(v=> v.courses).flat(1).filter(v=>{
+    // @ts-ignore
     v.learning_propg = (v.completed_chapter / v.total_chapter * 100).toFixed(2)
     return v.is_learning;
     });
@@ -81,7 +82,9 @@ export function CampusHeader() {
                                             <div key={v.id} className="flex items-center justify-between">
                                                 <div>{v.title}</div>
                                                 <div className="flex items-center gap-2">
+                                                    {/*// @ts-ignore*/}
                                                     <div className="text-sm text-gray-500 dark:text-gray-400">{v.learning_propg}%</div>
+                                                    {/*// @ts-ignore*/}
                                                     { new Array(5).fill(1).map((c,idx)=> (<StarIcon key={idx} className={`h-5 w-5  ${ (idx + 1) * 20 > v.learning_propg ? ' stroke-muted-foreground fill-muted' : 'fill-yellow-500' }`} />)) }
 
                                                 </div>

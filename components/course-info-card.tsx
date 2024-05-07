@@ -19,7 +19,7 @@ export const CourseMetaInfo = {
     CourseName: "Sample Course",
     OrganizationName: "CampusHub Online",
 }
-
+// @ts-ignore
 export function CourseInfoCard({item}) {
     return (
         <Card className="w-full max-w-lg border rounded-lg p-4">

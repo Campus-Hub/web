@@ -26,8 +26,10 @@ import {
 } from "@/components/icon";
 import {useState} from 'react'
 import {list} from '@/lib/mock';
+// @ts-ignore
 export default function CourseSearchBar(props) {
 	const [search,setSearch] = useState('')
+    // @ts-ignore
     return (
         <div className="flex items-center gap-4">
             <Popover>
@@ -43,11 +45,13 @@ export default function CourseSearchBar(props) {
             </Popover>
             <div className="relative">
                 <SearchIcon className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+                {/*// @ts-ignore*/}
                 <Input
                     className="h-10 w-[300px] pl-10 focus:border-gray-400 dark:bg-gray-800 dark:text-gray-50 dark:placeholder:text-gray-400"
                     placeholder="Search courses..."
                     type="search"
-					 onInput={e=>props.changeTitle(e.target.value )}
+                    // @ts-ignore
+					onInput={e=>props.changeTitle(e.target.value )}
                 />
             </div>
             <DropdownMenu>

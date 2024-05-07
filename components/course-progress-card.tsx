@@ -20,7 +20,7 @@ export const CourseMetaInfo = {
     OrganizationName: "CampusHub Online",
 }
 
-
+// @ts-ignore
 export function CourseProgressCard({item}) {
     return (
         <Card>

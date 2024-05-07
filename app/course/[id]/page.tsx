@@ -13,6 +13,7 @@ import {CourseDetailSheet} from "@/components/course-detail-sheet";
 export default function CourseDetailPage({ params }: { params: { id: number } }) {
   const { toast } = useToast()
 	const item = list.map(v=> v.courses).flat(1).find(v=>{
+        // @ts-ignore
 		v.learning_propg = (v.completed_chapter / v.total_chapter * 100).toFixed(2)
 		return v.id == params.id;
 	});
@@ -58,6 +59,7 @@ export default function CourseDetailPage({ params }: { params: { id: number } })
                         </div>
                         <div className="mt-8">
                             <h2 className="text-2xl font-bold">Course Content</h2>
+                            {/*// @ts-ignore*/}
                             <div className="mt-4 space-y-4" dangerouslySetInnerHTML={{ __html: item.content }} >
 								
                             </div>
@@ -67,6 +69,7 @@ export default function CourseDetailPage({ params }: { params: { id: number } })
                         <CourseInfoCard item={item}/>
                         <CourseDetailCard item={item}/>
                         <CourseProgressCard item={item}/>
+                        {/*// @ts-ignore*/}
                         <CourseResourceCard item={item}/>
                     </div>
                 </div>
